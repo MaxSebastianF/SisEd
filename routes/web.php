@@ -2,17 +2,20 @@
 
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+use App\Http\Controllers\Empleados\EmpleadoController;
+use App\Http\Controllers\Estudiantes\EstudianteController;
+use App\Http\Controllers\Pagos\PagoController;
 
+
+Route::get('/empleados/gestion', [EmpleadoController::class, 'gestion'])->name('empleados.gestion');
+Route::get('/empleados/reportes', [EmpleadoController::class, 'reportes'])->name('empleados.reportes');
+
+Route::get('/estudiantes/gestion', [EstudianteController::class, 'gestion'])->name('estudiantes.gestion');
+Route::get('/estudiantes/reportes', [EstudianteController::class, 'reportes'])->name('estudiantes.reportes');
+
+Route::get('/pagos/realizar', [PagoController::class, 'index'])->name('pagos.index');
+
+// 
 Route::get('/', function () {
     return view('welcome');
 });
