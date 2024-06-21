@@ -14,11 +14,12 @@ return new class extends Migration
     public function up()
     {
         Schema::create('tutor', function (Blueprint $table) {
-            $table->integer('id_tutor')->primary();
+            $table->id('id_tutor') ;
             $table->string('nombre', 30)->nullable();
             $table->string('apellido', 30)->nullable();
-            $table->tinyText('Email')->nullable();
-            $table->integer('Telefono')->nullable();
+            $table->tinyText('email')->nullable();
+            $table->integer('telefono')->nullable();
+            $table->timestamps();
         });
     }
 

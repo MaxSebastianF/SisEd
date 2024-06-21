@@ -106,7 +106,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('icons') }}">
+                    <a class="nav-link" href="{{ route('gestion-estudiantes') }}">
                         <i class="ni ni-planet text-blue"></i> {{ __('Estudiantes') }}
                     </a>
                 </li>

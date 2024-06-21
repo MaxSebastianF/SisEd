@@ -14,8 +14,10 @@ return new class extends Migration
     public function up()
     {
         Schema::create('curso', function (Blueprint $table) {
-            $table->integer('id_curso')->primary();
+            $table->id('id_curso') ;
             $table->integer('curso')->nullable();
+            $table->string('paralelo')->default('A');
+            $table->timestamps();
         });
     }
 
