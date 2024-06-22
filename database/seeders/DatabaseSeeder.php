@@ -1,8 +1,12 @@
 <?php
+
 namespace Database\Seeders;
 
-use Illuminate\Support\Facades\DB;
+
 use Illuminate\Database\Seeder;
+use App\Models\User;
+
+
 
 class DatabaseSeeder extends Seeder
 {
@@ -13,6 +17,22 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call([UsersTableSeeder::class]);
+       
+         User::factory()->create([
+            'name' => 'Admin',
+            'email' => 'kali@gmail.com',
+            'rol' => 'admin',
+            'password' => ('secret')
+        ]);
+
+        User::factory()->create([
+            'name' => 'tutor',
+            'email' => 'tutor@gmail.com',
+            'rol' => 'tutor',
+            'password' => ('secret')
+        ]);
+
+
     }
+   
 }
