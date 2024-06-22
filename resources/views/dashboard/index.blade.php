@@ -4,63 +4,71 @@
         <!-- Navbar -->
         <x-navbars.navs.auth titlePage="Dashboard"></x-navbars.navs.auth>
         <!-- End Navbar -->
-        <div class="container-fluid py-4">
-            <div class="row">
-                <!-- Número de Estudiantes -->
-                <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
-                    <div class="card">
-                        <div class="card-header p-3 pt-2">
-                            <div class="icon icon-lg icon-shape bg-gradient-dark shadow-dark text-center border-radius-xl mt-n4 position-absolute">
-                                <i class="material-icons opacity-10">school</i>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem incidunt excepturi nam debitis assumenda
+            corporis consectetur, modi similique voluptas voluptatum suscipit maxime itaque reiciendis, aliquid quam
+            praesentium sequi beatae ex!</p>
+        @if (auth()->check() && auth()->user()->rol == 'admin')
+            <div class="container-fluid py-4">
+                <div class="row">
+
+                    <!-- Número de Estudiantes -->
+                    <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+                        <div class="card">
+                            <div class="card-header p-3 pt-2">
+                                <div
+                                    class="icon icon-lg icon-shape bg-gradient-dark shadow-dark text-center border-radius-xl mt-n4 position-absolute">
+                                    <i class="material-icons opacity-10">school</i>
+                                </div>
+                                <div class="text-end pt-1">
+                                    <p class="text-sm mb-0 text-capitalize">Número de Estudiantes</p>
+                                    <h4 class="mb-0">1,200</h4>
+                                </div>
                             </div>
-                            <div class="text-end pt-1">
-                                <p class="text-sm mb-0 text-capitalize">Número de Estudiantes</p>
-                                <h4 class="mb-0">1,200</h4>
-                            </div>
-                        </div>
-                        <hr class="dark horizontal my-0">
-                       <!--- <div class="card-footer p-3">
+                            <hr class="dark horizontal my-0">
+                            <!--- <div class="card-footer p-3">
                             <p class="mb-0"><span class="text-success text-sm font-weight-bolder">+5% </span>desde el mes pasado</p>
                         </div> ---->
-                    </div>
-                </div>
-                <!-- Número de Tutores -->
-                <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
-                    <div class="card">
-                        <div class="card-header p-3 pt-2">
-                            <div class="icon icon-lg icon-shape bg-gradient-primary shadow-primary text-center border-radius-xl mt-n4 position-absolute">
-                                <i class="material-icons opacity-10">people</i>
-                            </div>
-                            <div class="text-end pt-1">
-                                <p class="text-sm mb-0 text-capitalize">Número de Tutores</p>
-                                <h4 class="mb-0">150</h4>
-                            </div>
                         </div>
-                        <hr class="dark horizontal my-0">
-                       <!--- <div class="card-footer p-3">
+                    </div>
+                    <!-- Número de Tutores -->
+                    <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+                        <div class="card">
+                            <div class="card-header p-3 pt-2">
+                                <div
+                                    class="icon icon-lg icon-shape bg-gradient-primary shadow-primary text-center border-radius-xl mt-n4 position-absolute">
+                                    <i class="material-icons opacity-10">people</i>
+                                </div>
+                                <div class="text-end pt-1">
+                                    <p class="text-sm mb-0 text-capitalize">Número de Tutores</p>
+                                    <h4 class="mb-0">150</h4>
+                                </div>
+                            </div>
+                            <hr class="dark horizontal my-0">
+                            <!--- <div class="card-footer p-3">
                             <p class="mb-0"><span class="text-success text-sm font-weight-bolder">+2% </span>desde el mes pasado</p>
                         </div> --->
-                    </div>
-                </div>
-                <!-- Número de Cursos -->
-                <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
-                    <div class="card">
-                        <div class="card-header p-3 pt-2">
-                            <div class="icon icon-lg icon-shape bg-gradient-success shadow-success text-center border-radius-xl mt-n4 position-absolute">
-                                <i class="material-icons opacity-10">class</i>
-                            </div>
-                            <div class="text-end pt-1">
-                                <p class="text-sm mb-0 text-capitalize">Número de Cursos</p>
-                                <h4 class="mb-0">45</h4>
-                            </div>
                         </div>
-                        <hr class="dark horizontal my-0">
-                        <!---<div class="card-footer p-3">
+                    </div>
+                    <!-- Número de Cursos -->
+                    <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+                        <div class="card">
+                            <div class="card-header p-3 pt-2">
+                                <div
+                                    class="icon icon-lg icon-shape bg-gradient-success shadow-success text-center border-radius-xl mt-n4 position-absolute">
+                                    <i class="material-icons opacity-10">class</i>
+                                </div>
+                                <div class="text-end pt-1">
+                                    <p class="text-sm mb-0 text-capitalize">Número de Cursos</p>
+                                    <h4 class="mb-0">45</h4>
+                                </div>
+                            </div>
+                            <hr class="dark horizontal my-0">
+                            <!---<div class="card-footer p-3">
                             <p class="mb-0"><span class="text-success text-sm font-weight-bolder">+3% </span>desde el mes pasado</p>
                         </div > ---->
+                        </div>
                     </div>
-                </div>
-                <!-- Estudiantes Graduados 
+                    <!-- Estudiantes Graduados
                 <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
                     <div class="card">
                         <div class="card-header p-3 pt-2">
@@ -80,7 +88,7 @@
                 </div>
             </div>
             <div class="row mt-4">
-                 Gráfico de Rendimiento 
+                 Gráfico de Rendimiento
                 <div class="col-lg-7 mb-lg-0 mb-4">
                     <div class="card">
                         <div class="card-header pb-0">
@@ -113,7 +121,7 @@
                         </div>
                     </div>
                 </div>   -->
-                <!-- Información de Eventos 
+                    <!-- Información de Eventos
                 <div class="col-lg-5">
                     <div class="card h-100">
                         <div class="card-header pb-0">
@@ -156,8 +164,10 @@
                         </div>
                     </div>
                 </div> --->
+                </div>
             </div>
-        </div>
+
+        @endif
     </main>
     <x-plugins></x-plugins>
 </x-layout>
