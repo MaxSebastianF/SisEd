@@ -24,7 +24,8 @@
 
             <!-- Botón para crear un nuevo usuario -->
             <div class="mb-4">
-                <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#createStudentModal">Nuevo Usuario</button>
+                <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#createStudentModal">Nuevo
+                    Usuario</button>
             </div>
 
             <!-- Tabla de usuarios -->
@@ -37,11 +38,16 @@
                         <table class="table align-items-center mb-0">
                             <thead>
                                 <tr>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nombre</th>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Email</th>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Rol</th>
-                                  
-                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Acciones</th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                        Nombre</th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                        Email</th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Rol
+                                    </th>
+
+                                    <th
+                                        class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                        Acciones</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -56,10 +62,12 @@
                                         <td>
                                             <p class="text-xs font-weight-bold mb-0">{{ $usuario->rol }}</p>
                                         </td>
-                                       
+
                                         <td class="align-middle text-center">
                                             <!-- Botones de acción -->
-                                            <a href="{{ route('editar-usuarios', ['id' => $usuario->id]) }}" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">Editar</a>
+                                            <a href="{{ route('editar-usuarios', ['id' => $usuario->id]) }}"
+                                                class="text-secondary font-weight-bold text-xs" data-toggle="tooltip"
+                                                data-original-title="Edit user">Editar</a>
                                         </td>
                                     </tr>
                                 @endforeach
@@ -70,36 +78,48 @@
             </div>
 
             <!-- Modal para crear un nuevo usuario -->
-            <div class="modal fade" id="createStudentModal" tabindex="-1" role="dialog" aria-labelledby="createStudentModalLabel" aria-hidden="true">
+            <div class="modal fade" id="createStudentModal" tabindex="-1" role="dialog"
+                aria-labelledby="createStudentModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title" id="createStudentModalLabel">Registrar usuario</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
                             <form action="{{ route('crear-usuario') }}" method="POST">
                                 @csrf
                                 <div class="mb-3">
                                     <label for="name" class="form-label">Nombre</label>
-                                    <input type="text" class="form-control" id="name" name="name" value="{{ old('name') }}" required>
+                                    <input type="text" class="form-control" id="name" name="name"
+                                        value="{{ old('name') }}" required>
                                 </div>
                                 <div class="mb-3">
                                     <label for="email" class="form-label">Email</label>
-                                    <input type="text" class="form-control" id="email" name="email" value="{{ old('email') }}" required>
+                                    <input type="text" class="form-control" id="email" name="email"
+                                        value="{{ old('email') }}" required>
                                 </div>
 
                                 <div class="mb-3">
-                                <label for="id_rol" class="form-label">Rol</label>
-                                    <input type="text" class="form-control" id="rol" name="rol" value="{{ old('rol') }}" required>
-                                </div>
+                                    <label for="id_rol" class="form-label">Rol</label>
+                                    <select class="form-select" aria-label="Select example" id="rol" name="rol" required>
+                                        <option value="Admin" {{ old('rol') == 'Admin' ? 'selected' : '' }}>Admin</option>
+                                        <option value="Tutor" {{ old('rol') == 'Tutor' ? 'selected' : '' }}>Tutor</option>
+                                    </select>
+                                    
+
+                                  <!---  <input type="text" class="form-control" id="rol" name="rol"
+                                        value="{{ old('rol') }}" required>
+                                </div> ---->
 
                                 <div class="mb-3">
                                     <label for="password" class="form-label">Contraseña</label>
-                                    <input type="text" class="form-control" id="password" name="password" value="{{ old('password') }}" required>
+                                    <input type="text" class="form-control" id="password" name="password"
+                                        value="{{ old('password') }}" required>
                                 </div>
-                               
-                                
+
+
                                 <button type="submit" class="btn btn-primary">Registrar</button>
                             </form>
                         </div>

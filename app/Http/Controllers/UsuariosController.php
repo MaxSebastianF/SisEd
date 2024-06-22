@@ -54,7 +54,7 @@ class UsuariosController extends Controller
         User::create($validatedData);
     
         // Redireccionar al listado de usuarios
-        return redirect()->route('gestion-usuarios');
+        return redirect()->route('gestion-usuarios')->with('success', 'Usuario Creado correctamente');
     }
 
     /**

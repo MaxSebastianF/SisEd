@@ -19,9 +19,9 @@
                             </div>
                         </div>
                         <hr class="dark horizontal my-0">
-                        <div class="card-footer p-3">
+                       <!--- <div class="card-footer p-3">
                             <p class="mb-0"><span class="text-success text-sm font-weight-bolder">+5% </span>desde el mes pasado</p>
-                        </div>
+                        </div> ---->
                     </div>
                 </div>
                 <!-- Número de Tutores -->
@@ -37,9 +37,9 @@
                             </div>
                         </div>
                         <hr class="dark horizontal my-0">
-                        <div class="card-footer p-3">
+                       <!--- <div class="card-footer p-3">
                             <p class="mb-0"><span class="text-success text-sm font-weight-bolder">+2% </span>desde el mes pasado</p>
-                        </div>
+                        </div> --->
                     </div>
                 </div>
                 <!-- Número de Cursos -->
@@ -55,12 +55,12 @@
                             </div>
                         </div>
                         <hr class="dark horizontal my-0">
-                        <div class="card-footer p-3">
+                        <!---<div class="card-footer p-3">
                             <p class="mb-0"><span class="text-success text-sm font-weight-bolder">+3% </span>desde el mes pasado</p>
-                        </div>
+                        </div > ---->
                     </div>
                 </div>
-                <!-- Estudiantes Graduados -->
+                <!-- Estudiantes Graduados 
                 <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
                     <div class="card">
                         <div class="card-header p-3 pt-2">
@@ -80,7 +80,7 @@
                 </div>
             </div>
             <div class="row mt-4">
-                <!-- Gráfico de Rendimiento -->
+                 Gráfico de Rendimiento 
                 <div class="col-lg-7 mb-lg-0 mb-4">
                     <div class="card">
                         <div class="card-header pb-0">
@@ -107,13 +107,13 @@
                         </div>
                         <div class="card-body p-3">
                             <div class="chart">
-                                <!-- Aquí irá un gráfico, placeholder por ahora -->
+                                
                                 <canvas id="chart-line" class="chart-canvas" height="300"></canvas>
                             </div>
                         </div>
                     </div>
-                </div>
-                <!-- Información de Eventos -->
+                </div>   -->
+                <!-- Información de Eventos 
                 <div class="col-lg-5">
                     <div class="card h-100">
                         <div class="card-header pb-0">
@@ -155,7 +155,7 @@
                             </ul>
                         </div>
                     </div>
-                </div>
+                </div> --->
             </div>
         </div>
     </main>
