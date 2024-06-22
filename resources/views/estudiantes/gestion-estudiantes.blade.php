@@ -61,7 +61,7 @@
                                             <p class="text-xs font-weight-bold mb-0">{{ $estudiante->nombre }} {{ $estudiante->apellido }}</p>
                                         </td>
                                         <td>
-                                            <p class="text-xs font-weight-bold mb-0">{{ $estudiante->curso->curso }}</p>
+                                            <p class="text-xs font-weight-bold mb-0">{{ $estudiante->id_curso}}</p>
                                         </td>
                                         <td class="align-middle text-center">
                                             <!-- Botones de acción -->

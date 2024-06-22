@@ -12,9 +12,26 @@
         </a>
     </div>
     <hr class="horizontal light mt-0 mb-2">
-    <div class="collapse navbar-collapse  w-auto  max-height-vh-100" id="sidenav-collapse-main">
+    <div class="w-auto  max-height-vh-100" id="sidenav-collapse-main">
         <ul class="navbar-nav">
 
+            @if (auth()->check() && auth()->user()->rol=="admin")
+            <!---- Usuarios  --->
+            <li class="nav-item mt-3">
+                <h6 class="ps-4 ms-2 text-uppercase text-xs text-white font-weight-bolder opacity-8">Usuarios</h6>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white {{ $activePage == 'gestion-usuarios' ? ' active bg-gradient-primary' : '' }} "
+                    href="{{ route('gestion-usuarios') }}">
+                    <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                        <i class="material-icons opacity-10">dashboard</i>
+                    </div>
+                    <span class="nav-link-text ms-1">Gestion</span>
+                </a>
+            </li>
+
+
+            <!---- Estudiantes  --->
             <li class="nav-item mt-3">
                 <h6 class="ps-4 ms-2 text-uppercase text-xs text-white font-weight-bolder opacity-8">Estudiantes</h6>
             </li>
@@ -27,16 +44,8 @@
                     <span class="nav-link-text ms-1">Gestion</span>
                 </a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link text-white {{ $activePage == 'reporte-estudiantes' ? ' active bg-gradient-primary' : '' }} "
-                    href="{{ route('reporte-estudiantes') }}">
-                    <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="material-icons opacity-10">dashboard</i>
-                    </div>
-                    <span class="nav-link-text ms-1">Reportes</span>
-                </a>
-            </li>
-
+            
+            <!---- Tutores  --->
             <li class="nav-item mt-3">
                 <h6 class="ps-4 ms-2 text-uppercase text-xs text-white font-weight-bolder opacity-8">Tutores</h6>
             </li>
@@ -49,16 +58,26 @@
                     <span class="nav-link-text ms-1">Gestion</span>
                 </a>
             </li>
+            
+
+            <!---- Cursos  --->
+            <li class="nav-item mt-3">
+                <h6 class="ps-4 ms-2 text-uppercase text-xs text-white font-weight-bolder opacity-8">Cursos</h6>
+            </li>
             <li class="nav-item">
-                <a class="nav-link text-white {{ $activePage == 'reporte-tutores' ? ' active bg-gradient-primary' : '' }} "
-                    href="{{ route('reporte-tutores') }}">
+                <a class="nav-link text-white {{ $activePage == 'gestion-curso' ? ' active bg-gradient-primary' : '' }} "
+                    href="{{ route('gestion-curso') }}">
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="material-icons opacity-10">dashboard</i>
+                        <i class="material-icons opacity-10">star</i>
                     </div>
-                    <span class="nav-link-text ms-1">Reportes</span>
+                    <span class="nav-link-text ms-1">Gestion</span>
                 </a>
             </li>
+            
 
+
+
+            <!---- Empleados
             <li class="nav-item mt-3">
                 <h6 class="ps-4 ms-2 text-uppercase text-xs text-white font-weight-bolder opacity-8">Empleados</h6>
             </li>
@@ -70,19 +89,11 @@
                     </div>
                     <span class="nav-link-text ms-1">Gestion</span>
                 </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-white {{ $activePage == 'reporte-empleados' ? ' active bg-gradient-primary' : '' }} "
-                    href="{{ route('reporte-empleados') }}">
-                    <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="material-icons opacity-10">dashboard</i>
-                    </div>
-                    <span class="nav-link-text ms-1">Reportes</span>
-                </a>
-            </li>
-
+            </li>  --->
+            
+            <!---- Pagos  --->
             <li class="nav-item mt-3">
-                <h6 class="ps-4 ms-2 text-uppercase text-xs text-white font-weight-bolder opacity-8">Pagos</h6>
+                <h6 class="ps-4 ms-2 text-uppercase text-xs text-white font-weight-bolder opacity-8">Principal</h6>
             </li>
 
 
@@ -94,11 +105,12 @@
                     </div>
                     <span class="nav-link-text ms-1">Dashboard</span>
                 </a>
-            </li>
-
+            </li>            
+            @endif
+            
 
         </ul>
     </div>
 
-    </div>
+
 </aside>

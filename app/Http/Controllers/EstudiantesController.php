@@ -74,7 +74,7 @@ class EstudiantesController extends Controller
         $estudiante->save();
 
         // Redirigir a una página de éxito o a la lista de estudiantes
-        return redirect()->route('reporte-estudiantes')->with('success', 'Estudiante registrado exitosamente');
+        return redirect()->route('gestion-estudiantes')->with('success', 'Estudiante registrado exitosamente');
     }
 
     /**

@@ -29,32 +29,39 @@
                     </a>
 
                     <!-- Form to edit estudiante -->
-                    <form method="POST" action="{{ route('actualizar-estudiante', ['id' => $estudiante->id_estudiante]) }}">
+                    <form method="POST"
+                        action="{{ route('actualizar-estudiante', ['id' => $estudiante->id_estudiante]) }}">
                         @csrf
                         @method('PUT')
 
                         <!-- Display current estudiante details -->
                         <div class="mb-3">
                             <label for="name" class="form-label">Nombre</label>
-                            <input type="text" class="form-control" id="nombre" name="nombre" value="{{ $estudiante->nombre }}" required>
+                            <input type="text" class="form-control" id="nombre" name="nombre"
+                                value="{{ $estudiante->nombre }}" required>
                         </div>
 
                         <div class="mb-3">
                             <label for="apellido" class="form-label">Apellido</label>
-                            <input type="apellido" class="form-control" id="apellido" name="apellido" value="{{ $estudiante->apellido }}" required>
+                            <input type="apellido" class="form-control" id="apellido" name="apellido"
+                                value="{{ $estudiante->apellido }}" required>
                         </div>
 
                         <div class="mb-3">
                             <label for="codigo" class="form-label">Codigo</label>
-                            <input type="codigo" class="form-control" id="codigo" name="codigo" value="{{ $estudiante->codigo }}" required>
+                            <input type="codigo" class="form-control" id="codigo" name="codigo"
+                                value="{{ $estudiante->codigo }}" required>
                         </div>
 
                         <div class="mb-3">
                             <label for="id_tutor" class="form-label">Tutor</label>
                             <select class="form-control" id="id_tutor" name="id_tutor">
-                                <option value="" {{ $estudiante->id_tutor == null ? 'selected' : '' }}>Sin Tutor</option>
-                                @foreach($tutores as $tutor)
-                                    <option value="{{ $tutor->id_tutor }}" {{ $estudiante->id_tutor == $tutor->id_tutor ? 'selected' : '' }}>{{ $tutor->nombre }}</option>
+                                <option value="" {{ $estudiante->id_tutor == null ? 'selected' : '' }}>Sin Tutor
+                                </option>
+                                @foreach ($tutores as $tutor)
+                                    <option value="{{ $tutor->id_tutor }}"
+                                        {{ $estudiante->id_tutor == $tutor->id_tutor ? 'selected' : '' }}>
+                                        {{ $tutor->nombre }}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -62,33 +69,69 @@
                         <div class="mb-3">
                             <label for="id_curso" class="form-label">Curso</label>
                             <select class="form-control" id="id_curso" name="id_curso">
-                                <option value="" {{ $estudiante->id_curso == null ? 'selected' : '' }}>Sin Curso</option>
-                                @foreach($cursos as $curso)
-                                    <option value="{{ $curso->id_curso }}" {{ $estudiante->id_curso == $curso->id_curso ? 'selected' : '' }}>{{ $curso->curso.$curso->paralelo }}</option>
+                                <option value="" {{ $estudiante->id_curso == null ? 'selected' : '' }}>Sin Curso
+                                </option>
+                                @foreach ($cursos as $curso)
+                                    <option value="{{ $curso->id_curso }}"
+                                        {{ $estudiante->id_curso == $curso->id_curso ? 'selected' : '' }}>
+                                        {{ $curso->curso . $curso->paralelo }}</option>
                                 @endforeach
-                            </select> 
+                            </select>
                         </div>
                         <!-- Submit button -->
                         <button type="submit" class="btn btn-primary">Guardar Cambios</button>
                     </form>
 
-                   
 
-                    <form action="{{ route('eliminar-estudiante', $estudiante->id_estudiante) }}" method="POST" onsubmit="return confirm('¿Estás seguro de que deseas eliminar este estudiante? Esta acción no se puede deshacer.');">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" class="btn btn-danger">Eliminar Estudiante</button>
-                    </form>
 
+                    <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                        data-bs-target="#confirmDeleteModal">
+                        Eliminar Estudiante
+                    </button>
+
+
+                    <div class="modal fade" id="confirmDeleteModal" tabindex="-1" role="dialog"
+                        aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="confirmDeleteModalLabel">Confirmar Eliminación</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    ¿Estás seguro de que deseas eliminar este estudiante? Esta acción no se puede
+                                    deshacer.
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Cancelar</button>
+                                    <!-- Botón para enviar el formulario -->
+                                    <form id="deleteForm"
+                                        action="{{ route('eliminar-estudiante', $estudiante->id_estudiante) }}"
+                                        method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger">Eliminar</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
             </div>
 
 
-         
+
 
         </div>
     </main>
+
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    
+    
+
     <x-plugins></x-plugins>
 
 

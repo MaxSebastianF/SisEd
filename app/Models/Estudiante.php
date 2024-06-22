@@ -12,7 +12,7 @@ class Estudiante extends Model
     protected $fillable = [
         'nombre', 
         'apellido', 
-        'Codigo', 
+        'codigo', 
         'id_tutor', 
         'id_curso'
     ];
